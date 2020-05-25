@@ -1,0 +1,8 @@
+#gral{
+    background-image: url(./../../../assets/imagenes/fondo2.jpg);
+    background-size: 100%;
+    font-family: 'Tenor Sans', sans-serif;
+}
+#cont{
+    background-color: rgba(0, 0, 0, 0.418);
+}

@@ -1,0 +1,49 @@
+<form action="">
+    <div class="row alert alert-warning">
+        <label for="vidas" class="col-6">Vidas: {{cantVidas}}</label>
+        <label for="puntaje" class="col-6"> Puntaje: {{puntaje}}</label>
+    </div>
+    <div class="row justify-content-center">
+        <img class="col-10" src="assets/imagenes/{{palabra.urlImagen}}">
+    </div>
+    <div class="row">
+        <form class="col-12">
+            <!--<div class="form-group row justify-content-center">
+                <input **ngFor="let item of arrayPalabraUsuario; index as i" class=""
+                type="text" name="img{{i}}" id="img{{i}}"
+                (ngModelChange)="ponerLetra()" [(ngModel)] = "arrayPalabraUsuario[       ]">
+            </div> -->
+            <div class="form-group row justify-content-center mt-5">
+                <input *ngIf="arrayPalabraIngles.length>=1" class="form-control col-1" type="text" maxlength="1"
+                name="letter0" id="letter0" [(ngModel)]="letra0" (ngModelChange)="ponerLetras()">
+
+                <input *ngIf="arrayPalabraIngles.length>=2" class="form-control col-1" type="text" maxlength="1"
+                name="letter1" id="letter1" [(ngModel)]="letra1" (ngModelChange)="ponerLetras()">
+
+                <input *ngIf="arrayPalabraIngles.length>=3" class="form-control col-1" type="text" maxlength="1"
+                name="letter2" id="letter2" [(ngModel)]="letra2" (ngModelChange)="ponerLetras()">
+
+                <input *ngIf="arrayPalabraIngles.length>=4" class="form-control col-1" type="text" maxlength="1"
+                name="letter3" id="letter3" [(ngModel)]="letra3" (ngModelChange)="ponerLetras()">
+
+                <input *ngIf="arrayPalabraIngles.length>=5" class="form-control col-1" type="text" maxlength="1"
+                name="letter4" id="letter4" [(ngModel)]="letra4" (ngModelChange)="ponerLetras()">
+
+                <input *ngIf="arrayPalabraIngles.length>=6" class="form-control col-1" type="text" maxlength="1"
+                name="letter5" id="letter5" [(ngModel)]="letra5" (ngModelChange)="ponerLetras()">
+
+                <input *ngIf="arrayPalabraIngles.length>=7" class="form-control col-1" type="text" maxlength="1"
+                name="letter6" id="letter6" [(ngModel)]="letra6" (ngModelChange)="ponerLetras()">
+
+                <input *ngIf="arrayPalabraIngles.length>=8" class="form-control col-1" type="text" maxlength="1"
+                name="letter7" id="letter7" [(ngModel)]="letra7" (ngModelChange)="ponerLetras()">
+            </div>
+        </form>
+    </div>
+    <div class="row justify-content-center">
+        <button type="button" class="btn btn-info" (click)="puntosVidas()">Comprobar</button>
+    </div>
+    <div class="row alert alert-warning justify-content-center">
+        <p> <strong>{{palabra.palabraEspanol}}</strong> </p>
+    </div>
+</form>

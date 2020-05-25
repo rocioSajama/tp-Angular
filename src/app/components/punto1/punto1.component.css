@@ -1,0 +1,25 @@
+#fondo{
+    background-image: url(./../../../assets/imagenes/fondomensaje.png);
+}
+#bordes{
+    width: 250px;
+    background-color: rgb(31, 31, 148);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 25px ;
+    border-bottom-left-radius: 0px ;
+}
+#titulo-mensaje{
+    width: 300px;
+    background-color: blue;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 25px ;
+    border-bottom-left-radius: 0px ;
+}
+#txtform{
+    color: rgb(37, 37, 105);
+}
+#letra{
+    font-family: 'Tenor Sans', sans-serif;
+}

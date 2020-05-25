@@ -1,0 +1,9 @@
+footer{
+    background: #f6f8f9;
+    background: linear-gradient(to bottom, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 );
+    text-align: center;
+    color: coral;
+    line-height: 20px;
+    bottom: 0;
+}

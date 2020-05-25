@@ -1,0 +1,63 @@
+<div id="letra">
+  <div class=" row mt-5" id="fondo" >
+      <form class="col-md-12 card border-right-0 " id="fondo">
+        <p id="titulo-mensaje" class="text-white p-2 text-center">Envia tu Mensaje</p> 
+          <div class="card-body">
+            <div class="row form-group">
+              <label class="col-sm-12 col-md-2 text-right"id="txtform">Para</label>
+              <input class="form-control col-sm-12 col-md-8 border border-success" type="number" placeholder="Telefono de destinatario" name="txtpara" [(ngModel)] = "mensaje.para" />
+            </div>
+          <div class="row form-group" >
+            <label class= "col-sm-12 col-md-2 text-right" id="txtform">Desde</label>
+            <input class="form-control col-sm-12 col-md-8 border border-success" type="number" placeholder="Tu numero de telefono" name="txtdesde" [(ngModel)] = "mensaje.desde" />
+          </div>
+          <p class="text-right">Caracteres restantes: {{restante()}}</p>
+          <div class="row form-group">
+            <textarea class="form-control border border-success " [maxlength]="tamMaxTxt" rows="5" name="txtTexto" [(ngModel)] = "mensaje.texto" (ngModelChange)="cambiarTamTexto()">  
+            </textarea>
+          </div>
+          <div class="row form-group d-flex justify-content-end" >
+            <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#modalMensaje" id="bordes" (click)="enviarMensaje()">
+              Enviar
+            </button>
+            <input class="btn btn-primary ml-2  col-3" type="reset" value="Limpiar" id="bordes">           
+          </div>
+          
+        </div>
+      </form>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalMensaje" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Mensaje Enviado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <form *ngFor="let item of mensajes" class="p-4">
+            <p class="text-right">{{item.fecha | date:'longDate' }}</p>
+            <div class="form-group row">
+              <label>Para: {{item.para}}</label>
+            </div>
+            <div class="form-group row">
+              <label>Desde: {{item.desde}}</label>
+            </div>
+            <div class="form-group row">
+              <label>Mensaje: {{item.texto}}</label>
+            </div>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
